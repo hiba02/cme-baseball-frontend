@@ -6,13 +6,14 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import CreateTeam from "./components/CreateTeam";
 import ShowTeam from "./components/ShowTeam";
+import CreatePlayer from "./components/CreatePlayer";
 
 function App() {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState(1);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
-  const [teamNames, setTeamNames] = useState([]); //[]
+  const [teamNames, setTeamNames] = useState([{ id: 0, name: "Lions" }]); //[]
   // const [teamNames, setTeamNames] = useState(["Lions"]); //[]
   const [teamId, setTeamId] = useState(1);
   const [currentTeam, setCurrentTeam] = useState("");
@@ -76,6 +77,20 @@ function App() {
                 // setPlayersInfo={setPlayersInfo}
                 currentTeam={currentTeam}
                 setCurrentTeam={setCurrentTeam}
+              />
+            </Route>
+            <Route path="/createPlayer">
+              <CreatePlayer
+              // user={userInfo}
+              // players={playersInfo}
+              // pitcher={pitcher}
+              // hitter={hitter}
+              // addNewPlayers={addNewPlayers}
+              // teamId={teamId}
+              // addNewPlayerInClient={addNewPlayerInClient}
+              // getHitterFromPlayerInfo={getHitterFromPlayerInfo}
+              // toggleCheckFromHitterId={toggleCheckFromHitterId}
+              // removePlayerById={removePlayerById}
               />
             </Route>
           </Switch>
