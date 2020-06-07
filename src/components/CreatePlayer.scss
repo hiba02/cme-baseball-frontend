@@ -119,32 +119,31 @@
 
 /////////////////////////////
 @media (max-width: 1220px) {
-  #wrap {
+  #wrap2 {
     width: 100%;
   }
 }
 
 /* screen 0 ~ 768px */
 @media (max-width: 768px) {
-  #wrap {
+  #wrap2 {
     width: 100%;
   }
 }
 
 /* screen 0 ~ 480px */
-@media (max-width: 480px) {
-  #wrap {
+@media (max-width: 550px) {
+  #wrap2 {
     width: 100%;
   }
-  header {
-    height: 300px;
-  }
-  aside {
+
+  .createPlayer-aside {
     float: none;
     width: 100%;
     height: 300px;
   }
-  section {
+  .createPlayer-section {
+    margin-top: 100px;
     float: none;
     width: 100%;
     height: 300px;

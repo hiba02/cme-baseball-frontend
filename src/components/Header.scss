@@ -104,22 +104,21 @@
   box-shadow: 0 0 0 3px #7d5140 inset, 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* media query*/
-@media (max-width: 1010px) {
-  .container {
-    width: 100%;
-  }
-  .row {
-    padding: 0 15px;
-  }
-}
+// /* media query*/
+// @media (max-width: 1010px) {
+//   .container {
+//     width: 100%;
+//   }
+//   .row {
+//     padding: 0 15px;
+//   }
+// }
 
-/* 화면 너비 0 ~ 600px */
-@media (max-width: 600px) {
-  .header {
-    height: auto;
-  }
-  .header .header_title {
-    display: none;
-  }
-}
+// @media (max-width: 600px) {
+//   .header {
+//     height: auto;
+//   }
+//   .header .header_title {
+//     display: none;
+//   }
+// }
