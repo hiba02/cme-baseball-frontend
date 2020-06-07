@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { DiJavascript1, DiReact, DiPostgresql, DiSass } from "react-icons/di";
 
 export default function Header(props) {
@@ -53,7 +53,7 @@ export default function Header(props) {
                     <span>Sass</span>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     className="react-icon"
                     target="_blank"
@@ -62,7 +62,7 @@ export default function Header(props) {
                     <DiPostgresql />
                     <span>Postgresql</span>
                   </a>
-                </li>
+                </li> */}
 
                 <li>
                   <a
@@ -73,18 +73,6 @@ export default function Header(props) {
                     <span>Github</span>
                   </a>
                 </li>
-                {/* <li>
-                  <a href="#">
-                    <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                    <span>Facebook</span>
-                  </a>
-                </li> */}
-                {/* <li>
-                  <a href="#">
-                    <i className="fa fa-twitter" aria-hidden="true"></i>
-                    <span>twitter</span>
-                  </a>
-                </li> */}
                 <li>
                   <a
                     target="_blank"
