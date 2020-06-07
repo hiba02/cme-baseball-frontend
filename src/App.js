@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import CreateTeam from "./components/CreateTeam";
+import ShowTeam from "./components/ShowTeam";
 
 function App() {
   const [word, setWord] = useState("");
@@ -62,6 +63,21 @@ function App() {
                 // getUserIdTeamId={getUserIdTeamId}
                 // getUserInfoByEmail={getUserInfoByEmail}
                 addTeamInClient={addTeamInClient}
+              />
+            </Route>
+            <Route path="/showTeam">
+              <ShowTeam
+              // getTeamNameByUserId={getTeamNameByUserId}
+              // currentUserInfo={userInfo}
+              // curretnUserId={userId}
+              // addFavoriteTeam={addFavoriteTeam}
+              // teamNames={teamNames}
+              // getPlayersFromSameTeam={getPlayersFromSameTeam}
+              // getPlayersByteamId={getPlayersByteamId}
+              // setTeamId={setTeamId}
+              // setPlayersInfo={setPlayersInfo}
+              // currentTeam={currentTeam}
+              // setCurrentTeam={setCurrentTeam}
               />
             </Route>
           </Switch>
