@@ -10,15 +10,14 @@ const ShowTeam = ({
   setPlayersInfo,
   getCurrentTeamByTeamId,
   currentTeam,
-  setCurrentTeam
+  setCurrentTeam,
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
     <div className="showTeam-template">
-      {/* <p>Team Name</p> */}
       <article className="showTeam-box">
         {teamNames
-          ? teamNames.map(team => (
+          ? teamNames.map((team) => (
               <TeamList
                 key={team.id}
                 team={team}

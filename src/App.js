@@ -12,7 +12,8 @@ function App() {
   const [userId, setUserId] = useState(1);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
-  const [teamNames, setTeamNames] = useState(null); //[]
+  const [teamNames, setTeamNames] = useState([]); //[]
+  // const [teamNames, setTeamNames] = useState(["Lions"]); //[]
   const [teamId, setTeamId] = useState(1);
   const [currentTeam, setCurrentTeam] = useState("");
   const [pitcher, setPitcher] = useState({
@@ -25,17 +26,13 @@ function App() {
     uniform_number: "35",
     position: "RF",
   });
-  const nextId = useRef(100);
+  const nextId = useRef(1);
 
-  // functions
-
-  //CreateTeam.js handleSubmit
   const addTeamInClient = useCallback(
-    (teamName, userId) => {
+    (teamName) => {
       const team = {
         id: nextId.current,
         name: teamName,
-        user_id: userId,
       };
       setTeamNames(teamNames.concat(team));
       nextId.current += 1;
@@ -43,6 +40,7 @@ function App() {
     [teamNames]
   );
 
+  console.log("teams", teamNames);
   return (
     <div id="wrap">
       <Router>
@@ -67,17 +65,17 @@ function App() {
             </Route>
             <Route path="/showTeam">
               <ShowTeam
-              // getTeamNameByUserId={getTeamNameByUserId}
-              // currentUserInfo={userInfo}
-              // curretnUserId={userId}
-              // addFavoriteTeam={addFavoriteTeam}
-              // teamNames={teamNames}
-              // getPlayersFromSameTeam={getPlayersFromSameTeam}
-              // getPlayersByteamId={getPlayersByteamId}
-              // setTeamId={setTeamId}
-              // setPlayersInfo={setPlayersInfo}
-              // currentTeam={currentTeam}
-              // setCurrentTeam={setCurrentTeam}
+                // getTeamNameByUserId={getTeamNameByUserId}
+                // currentUserInfo={userInfo}
+                // curretnUserId={userId}
+                // addFavoriteTeam={addFavoriteTeam}
+                teamNames={teamNames}
+                // getPlayersFromSameTeam={getPlayersFromSameTeam}
+                // getPlayersByteamId={getPlayersByteamId}
+                setTeamId={setTeamId}
+                // setPlayersInfo={setPlayersInfo}
+                currentTeam={currentTeam}
+                setCurrentTeam={setCurrentTeam}
               />
             </Route>
           </Switch>

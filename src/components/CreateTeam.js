@@ -12,14 +12,14 @@ const CreateTeam = ({
   const [teamName, setTeamName] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
 
-  console.log("CreateTeam currentUserInfo: ", currentUserInfo);
-  console.log("CreateTeam current teamId: ", curretnUserId);
+  // console.log("CreateTeam currentUserInfo: ", currentUserInfo);
+  // console.log("CreateTeam current teamId: ", curretnUserId);
   // let userId = 1;
-  const userId = useRef(1);
-  if (currentUserInfo) {
-    userId.current = currentUserInfo.id;
-    console.log("userId: ", userId);
-  }
+  // const userId = useRef(1);
+  // if (currentUserInfo) {
+  //   userId.current = currentUserInfo.id;
+  //   console.log("userId: ", userId);
+  // }
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
@@ -28,7 +28,9 @@ const CreateTeam = ({
       // );
       setRedirectHome(true);
       setTeamName("");
-      addTeamInClient(teamName, curretnUserId);
+      // addTeamInClient(teamName, curretnUserId);
+
+      addTeamInClient(teamName);
       // need to pass team id into CreatePlayer component
     },
     [addTeam, teamName]
