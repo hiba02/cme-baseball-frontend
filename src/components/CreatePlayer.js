@@ -21,7 +21,7 @@ const CreatePlayer = ({
   toggleCheckFromHitterId,
 }) => {
   // need to get team-id!!
-  console.log("CreatePlayer teamId", teamId);
+  // console.log("CreatePlayer teamId", teamId);
   const [redirectHome, setRedirectHome] = useState(false);
   const [inputs, setInputs] = useState({
     team_id: 1,
@@ -153,7 +153,7 @@ const CreatePlayer = ({
                   />
                 </div>
 
-                <div className="createPlayer-bats">
+                {/* <div className="createPlayer-bats">
                   <input
                     name="bats"
                     type="text"
@@ -161,8 +161,8 @@ const CreatePlayer = ({
                     value={bats}
                     onChange={onChange}
                   />
-                </div>
-                <div className="createPlayer-throws">
+                </div> */}
+                {/* <div className="createPlayer-throws">
                   <input
                     name="throws"
                     type="text"
@@ -170,7 +170,32 @@ const CreatePlayer = ({
                     value={throws}
                     onChange={onChange}
                   />
+                </div> */}
+
+                <div className="createPlayer-bats-throws">
+                  <div>
+                    <span>Bats: &nbsp; &nbsp; &nbsp;</span>
+                    <label for="R">
+                      <input type="radio" name="bats" value="R" /> Right
+                    </label>
+                    <label for="L">
+                      <input type="radio" name="bats" value="L" /> Left
+                    </label>
+                  </div>
                 </div>
+
+                <div className="createPlayer-bats-throws">
+                  <div>
+                    <span>Throws: </span>
+                    <label for="R">
+                      <input type="radio" name="throws" value="R" /> Right
+                    </label>
+                    <label for="L">
+                      <input type="radio" name="throws" value="L" /> Left
+                    </label>
+                  </div>
+                </div>
+
                 <div className="emptyBox"></div>
 
                 <div className="createPlayer-check">
