@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import CreateTeam from "./components/CreateTeam";
 import ShowTeam from "./components/ShowTeam";
 import CreatePlayer from "./components/CreatePlayer";
+import ShowPlayers from "./components/ShowPlayers";
 
 function App() {
   const [word, setWord] = useState("");
@@ -15,7 +16,7 @@ function App() {
   const [playersInfo, setPlayersInfo] = useState([
     {
       team_id: 1,
-      name: "R Hyun-jin",
+      name: "R Hong-jin",
       uniform_number: "99",
       position: "P",
       bats: "R",
@@ -24,7 +25,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "H Austin  ",
+      name: "H Andrew",
       uniform_number: "18",
       position: "C",
       bats: "R",
@@ -33,7 +34,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "H Eric    ",
+      name: "T Eric    ",
       uniform_number: "30",
       position: "1B",
       bats: "L",
@@ -42,7 +43,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "G Greg    ",
+      name: "G Grace",
       uniform_number: "05",
       position: "2B",
       bats: "R",
@@ -51,7 +52,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "M Machado ",
+      name: "M Mike",
       uniform_number: "27",
       position: "3B",
       bats: "R",
@@ -60,7 +61,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "C Jake    ",
+      name: "C James",
       uniform_number: "09",
       position: "SS",
       bats: "R",
@@ -69,7 +70,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "M Will    ",
+      name: "W William",
       uniform_number: "04",
       position: "RF",
       bats: "R",
@@ -78,7 +79,7 @@ function App() {
     },
     {
       team_id: 1,
-      name: "P Tommy   ",
+      name: "Y Tom",
       uniform_number: "28",
       position: "LF",
       bats: "R",
@@ -87,8 +88,8 @@ function App() {
     },
     {
       team_id: 1,
-      name: "N Josh    ",
-      uniform_number: "22",
+      name: "N Joshua",
+      uniform_number: "21",
       position: "CF",
       bats: "L",
       throws: "L",
@@ -211,6 +212,15 @@ function App() {
                 addNewPlayerInClient={addNewPlayerInClient}
                 // getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                 // toggleCheckFromHitterId={toggleCheckFromHitterId}
+                removePlayerByUniformNum={removePlayerByUniformNum}
+              />
+            </Route>
+            <Route path="/showPlayer">
+              <ShowPlayers
+                // user={userInfo}
+                players={playersInfo}
+                // teamId={teamId}
+                // currentTeam={currentTeam}
                 removePlayerByUniformNum={removePlayerByUniformNum}
               />
             </Route>

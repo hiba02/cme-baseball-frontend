@@ -112,7 +112,8 @@
 
 .createPlayer-section {
   float: left;
-  width: 50%;
+  margin-top: 20px;
+  width: 45%;
   height: 600px;
   background: none;
   .roster_template {
@@ -121,6 +122,14 @@
       font-weight: normal;
       border-radius: 5px 5px 0 0;
       height: 3.9rem;
+      background: #004d40;
+      color: white;
+      // height: 4rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -129,6 +138,27 @@
   width: 100%;
   height: 10px;
   background: none;
+}
+
+.showPlayers_template {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 4px;
+  .showPlayers_title {
+    background: #004d40;
+    color: white;
+    height: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .showPlayers_content {
+    background: white;
+  }
 }
 
 /////////////////////////////
