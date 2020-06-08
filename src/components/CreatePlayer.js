@@ -4,7 +4,7 @@ import "./CreatePlayer.scss";
 import { IoMdCloseCircle } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
 import Roster from "./Roster";
-// import ShowPlayers from "./ShowPlayers";
+import ShowPlayers from "./ShowPlayers";
 
 const CreatePlayer = ({
   userInfo,
@@ -13,7 +13,7 @@ const CreatePlayer = ({
   hitter,
   playersInfo,
   currentTeam,
-  removePlayerById,
+  removePlayerByUniformNum,
   addNewPlayers,
   teamId,
   addNewPlayerInClient,
@@ -103,6 +103,8 @@ const CreatePlayer = ({
   let rostNumber = 0;
   let positionNumber = 0;
 
+  // console.log("createPlayer", playersInfo);
+
   return (
     <Fragment>
       <div id="#wrap2">
@@ -152,25 +154,6 @@ const CreatePlayer = ({
                     onChange={onChange}
                   />
                 </div>
-
-                {/* <div className="createPlayer-bats">
-                  <input
-                    name="bats"
-                    type="text"
-                    placeholder="Bats"
-                    value={bats}
-                    onChange={onChange}
-                  />
-                </div> */}
-                {/* <div className="createPlayer-throws">
-                  <input
-                    name="throws"
-                    type="text"
-                    placeholder="Throws"
-                    value={throws}
-                    onChange={onChange}
-                  />
-                </div> */}
 
                 <div className="createPlayer-bats-throws">
                   <div>
@@ -234,7 +217,7 @@ const CreatePlayer = ({
                     number={(rostNumber = rostNumber + 1)}
                     getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                     toggleCheckFromHitterId={toggleCheckFromHitterId}
-                    removePlayerById={removePlayerById}
+                    removePlayerByUniformNum={removePlayerByUniformNum}
                   />
                 ))}
             </div>

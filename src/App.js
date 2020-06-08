@@ -156,6 +156,13 @@ function App() {
     nextId.current += 1;
   };
 
+  //remove player
+  const removePlayerByUniformNum = (uniform_number) => {
+    setPlayersInfo(
+      playersInfo.filter((p) => p.uniform_number !== uniform_number)
+    );
+  };
+
   return (
     <div id="wrap">
       <Router>
@@ -196,7 +203,7 @@ function App() {
             <Route path="/createPlayer">
               <CreatePlayer
                 // user={userInfo}
-                // players={playersInfo}
+                players={playersInfo}
                 // pitcher={pitcher}
                 // hitter={hitter}
                 // addNewPlayers={addNewPlayers}
@@ -204,7 +211,7 @@ function App() {
                 addNewPlayerInClient={addNewPlayerInClient}
                 // getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                 // toggleCheckFromHitterId={toggleCheckFromHitterId}
-                // removePlayerById={removePlayerById}
+                removePlayerByUniformNum={removePlayerByUniformNum}
               />
             </Route>
           </Switch>

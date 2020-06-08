@@ -4,14 +4,14 @@ import {
   FaCaretUp,
   FaCaretDown,
   FaPlusCircle,
-  FaMinusCircle
+  FaMinusCircle,
 } from "react-icons/fa";
 const Roster = ({
   player,
   number,
   getHitterFromPlayerInfo,
   toggleCheckFromHitterId,
-  removePlayerById
+  removePlayerByUniformNum,
 }) => {
   const {
     id,
@@ -27,7 +27,7 @@ const Roster = ({
     uniform_number,
     position,
     bats,
-    throws
+    throws,
   } = player;
 
   console.log("Roster number: ", number);
@@ -50,7 +50,9 @@ const Roster = ({
       {/* <span className="uniform_number">{uniform_number}</span> */}
       <span className="position">{position}</span>
       <span className="roster-icon-minus">
-        <FaMinusCircle onClick={() => removePlayerById(id)} />
+        <FaMinusCircle
+          onClick={() => removePlayerByUniformNum(uniform_number)}
+        />
       </span>
     </div>
   );
