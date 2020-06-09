@@ -274,6 +274,7 @@ function App() {
             <Route path="/playball">
               <Playball
                 user={userInfo}
+                teamId={teamId}
                 players={playersInfo}
                 pitcher={pitcher}
                 hitter={hitter}
@@ -281,6 +282,7 @@ function App() {
                 toggleCheckFromHitterId={toggleCheckFromHitterId}
                 removePlayerById={removePlayerById}
                 getPitcherFromPlayerInfo={getPitcherFromPlayerInfo}
+                removePlayerByUniformNum={removePlayerByUniformNum}
               />
             </Route>
           </Switch>

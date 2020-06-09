@@ -12,6 +12,7 @@ import PlayballBottomScoreButton from "./PlayballBottomScoreButton";
 import "./Playball.scss";
 
 const Playball = ({
+  teamId,
   user,
   players,
   pitcher,
@@ -20,6 +21,7 @@ const Playball = ({
   getPitcherFromPlayerInfo,
   toggleCheckFromHitterId,
   removePlayerById,
+  removePlayerByUniformNum,
 }) => {
   const [inning, setInning] = useState(1);
   const [topBottom, setTopBottom] = useState(true);
@@ -35,6 +37,8 @@ const Playball = ({
   const [pitchNum, setPitchNum] = useState(0);
   const [hittingNum, setHittinghNum] = useState(0);
   //count [countPitch, setCountPitch] = useState(0);
+
+  const newPlayers = players.filter((t) => teamId === t.team_id);
 
   const countInning = () => {
     // event.preventDefault();
@@ -426,7 +430,7 @@ const Playball = ({
 
   return (
     <div className="playball_body">
-      <div className="playball_wrap">
+      <div id="playball_wrap">
         <header className="playball_header">
           <article className="playball-top-body">
             <div className="playball-top-ballCount">
@@ -469,7 +473,7 @@ const Playball = ({
             <div className="roster_title">ROSTER</div>
             <div className="roster_content">
               {players &&
-                players.map((player) => (
+                newPlayers.map((player) => (
                   <Roster
                     user={user}
                     player={player}
@@ -478,6 +482,7 @@ const Playball = ({
                     getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                     toggleCheckFromHitterId={toggleCheckFromHitterId}
                     removePlayerById={removePlayerById}
+                    removePlayerByUniformNum={removePlayerByUniformNum}
                   />
                 ))}
             </div>
@@ -486,7 +491,7 @@ const Playball = ({
         <section className="playball_section">
           <div className="palyball_wrap">
             {players &&
-              players.map((player) => (
+              newPlayers.map((player) => (
                 <div className={"_" + player.position}>
                   <FieldPosition
                     user={user}
