@@ -9,8 +9,8 @@ Users can simulate baseball plays
 
 ## Final Product
 
-!["screenshot new player"]()
-!["screenshot playball"]()
+!["screenshot new player"]("https://github.com/hiba02/cme-baseball-frontend/blob/master/doc/create_players.png?raw=true")
+!["screenshot playball"]("https://github.com/hiba02/cme-baseball-frontend/blob/master/doc/playball.png?raw=true")
 
 ## Stack
 
