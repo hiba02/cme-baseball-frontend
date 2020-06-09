@@ -7,13 +7,13 @@ import logo from "../img/glove-clipart-6.png";
 
 const TeamList = ({
   team,
-  getPlayersFromSameTeam,
+  // getPlayersFromSameTeam,
   getPlayersByteamId,
   setTeamId,
   setPlayersInfo,
-
+  getCurrentTeamByTeamId,
   currentTeam,
-  setCurrentTeam
+  setCurrentTeam,
 }) => {
   const [redirect, setRedirect] = useState(false);
   console.log("TeamList team getPlayersFromSameTeam", team);
@@ -22,11 +22,12 @@ const TeamList = ({
 
   const moveAndShowTeamRoster = (id, name) => {
     // getPlayersFromSameTeam(id);
-    getPlayersByteamId(id);
+    setCurrentTeam(name);
     setTeamId(id);
+    getPlayersByteamId(id);
+    getCurrentTeamByTeamId(id);
     setRedirect(true);
     // getCurrentTeamByTeamId(id);
-    setCurrentTeam(name);
   };
 
   return (

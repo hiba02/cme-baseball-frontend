@@ -30,7 +30,7 @@ const Roster = ({
     throws,
   } = player;
 
-  console.log("Roster number: ", number);
+  // console.log("Roster number: ", number);
 
   return (
     <div className="roster_body">

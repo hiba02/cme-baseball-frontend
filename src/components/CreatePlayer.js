@@ -13,6 +13,7 @@ const CreatePlayer = ({
   hitter,
   playersInfo,
   currentTeam,
+  teamNames,
   removePlayerByUniformNum,
   addNewPlayers,
   teamId,
@@ -22,6 +23,7 @@ const CreatePlayer = ({
 }) => {
   // need to get team-id!!
   // console.log("CreatePlayer teamId", teamId);
+
   const [redirectHome, setRedirectHome] = useState(false);
   const [inputs, setInputs] = useState({
     team_id: 1,
@@ -158,11 +160,24 @@ const CreatePlayer = ({
                 <div className="createPlayer-bats-throws">
                   <div>
                     <span>Bats: &nbsp; &nbsp; &nbsp;</span>
-                    <label for="R">
-                      <input type="radio" name="bats" value="R" /> Right
+                    <label>
+                      <input
+                        type="radio"
+                        name="bats"
+                        value={bats}
+                        checked={true}
+                        onChange={onChange}
+                      />{" "}
+                      Right
                     </label>
-                    <label for="L">
-                      <input type="radio" name="bats" value="L" /> Left
+                    <label>
+                      <input
+                        type="radio"
+                        name="bats"
+                        value={bats}
+                        onChange={onChange}
+                      />{" "}
+                      Left
                     </label>
                   </div>
                 </div>
@@ -170,11 +185,25 @@ const CreatePlayer = ({
                 <div className="createPlayer-bats-throws">
                   <div>
                     <span>Throws: </span>
-                    <label for="R">
-                      <input type="radio" name="throws" value="R" /> Right
+                    <label>
+                      <input
+                        type="radio"
+                        name="throws"
+                        value={throws}
+                        checked={true}
+                        onChange={onChange}
+                      />{" "}
+                      Right
                     </label>
-                    <label for="L">
-                      <input type="radio" name="throws" value="L" /> Left
+                    <label>
+                      <input
+                        type="radio"
+                        name="throws"
+                        value={throws}
+                        onChange={onChange}
+                        checked={false}
+                      />{" "}
+                      Left
                     </label>
                   </div>
                 </div>
@@ -213,7 +242,7 @@ const CreatePlayer = ({
                   <Roster
                     user={userInfo}
                     player={player}
-                    key={player.id}
+                    key={player.uniform_number}
                     number={(rostNumber = rostNumber + 1)}
                     getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                     toggleCheckFromHitterId={toggleCheckFromHitterId}

@@ -11,6 +11,7 @@ const ShowTeam = ({
   getCurrentTeamByTeamId,
   currentTeam,
   setCurrentTeam,
+  removePlayerByUniformNum,
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
@@ -21,12 +22,13 @@ const ShowTeam = ({
               <TeamList
                 key={team.id}
                 team={team}
-                getPlayersFromSameTeam={getPlayersFromSameTeam}
+                // getPlayersFromSameTeam={getPlayersFromSameTeam}
                 getPlayersByteamId={getPlayersByteamId}
                 setTeamId={setTeamId}
                 setPlayersInfo={setPlayersInfo}
                 currentTeam={currentTeam}
                 setCurrentTeam={setCurrentTeam}
+                getCurrentTeamByTeamId={getCurrentTeamByTeamId}
               />
             ))
           : ""}

@@ -3,7 +3,14 @@ import { Redirect, Link } from "react-router-dom";
 import Roster from "./Roster";
 import "./ShowPlayers.scss";
 
-const ShowPlayers = ({ user, players, teamId, currentTeam,removePlayerById }) => {
+const ShowPlayers = ({
+  user,
+  players,
+  teamId,
+  currentTeam,
+  removePlayerById,
+  removePlayerByUniformNum,
+}) => {
   console.log("showPlayers component players: ", players);
   console.log("showPlayers component teamId: ", teamId);
   console.log("showPlayers component teamId: ", currentTeam);
@@ -15,12 +22,14 @@ const ShowPlayers = ({ user, players, teamId, currentTeam,removePlayerById }) =>
         <div className="showPlayers_title">ROSTER</div>
         <div className="showPlayers_content">
           {players &&
-            players.map(player => (
+            players.map((player) => (
               <Roster
                 user={user}
                 player={player}
                 key={player.id}
-                number={(rostNumber = rostNumber + 1)} removePlayerById={removePlayerById}
+                number={(rostNumber = rostNumber + 1)}
+                removePlayerById={removePlayerById}
+                removePlayerByUniformNum={removePlayerByUniformNum}
               />
             ))}
         </div>
