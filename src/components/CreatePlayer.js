@@ -26,7 +26,7 @@ const CreatePlayer = ({
 
   const [redirectHome, setRedirectHome] = useState(false);
   const [inputs, setInputs] = useState({
-    team_id: 1,
+    team_id: teamId,
     name: "",
     uniform_number: "",
     position: "",
@@ -57,7 +57,7 @@ const CreatePlayer = ({
 
   const onReset = () => {
     setInputs({
-      team_id: "", //team_id - value from teamList.js
+      team_id: 0, //team_id - value from teamList.js
       name: "",
       uniform_number: "",
       position: "",
@@ -164,8 +164,7 @@ const CreatePlayer = ({
                       <input
                         type="radio"
                         name="bats"
-                        value={bats}
-                        checked={true}
+                        value="R"
                         onChange={onChange}
                       />{" "}
                       Right
@@ -174,7 +173,7 @@ const CreatePlayer = ({
                       <input
                         type="radio"
                         name="bats"
-                        value={bats}
+                        value="L"
                         onChange={onChange}
                       />{" "}
                       Left
@@ -189,8 +188,7 @@ const CreatePlayer = ({
                       <input
                         type="radio"
                         name="throws"
-                        value={throws}
-                        checked={true}
+                        value="R"
                         onChange={onChange}
                       />{" "}
                       Right
@@ -199,9 +197,8 @@ const CreatePlayer = ({
                       <input
                         type="radio"
                         name="throws"
-                        value={throws}
+                        value="L"
                         onChange={onChange}
-                        checked={false}
                       />{" "}
                       Left
                     </label>

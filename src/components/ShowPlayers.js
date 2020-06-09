@@ -13,7 +13,7 @@ const ShowPlayers = ({
 }) => {
   console.log("showPlayers component players: ", players);
   console.log("showPlayers component teamId: ", teamId);
-  console.log("showPlayers component teamId: ", currentTeam);
+  console.log("showPlayers component currentTeam: ", currentTeam);
   let rostNumber = 0;
   let positionNumber = 0;
   return (

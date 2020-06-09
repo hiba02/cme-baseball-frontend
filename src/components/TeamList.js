@@ -22,10 +22,11 @@ const TeamList = ({
 
   const moveAndShowTeamRoster = (id, name) => {
     // getPlayersFromSameTeam(id);
+    console.log("moveAndShowTeamRoster", id, name);
     setCurrentTeam(name);
     setTeamId(id);
     getPlayersByteamId(id);
-    getCurrentTeamByTeamId(id);
+    // getCurrentTeamByTeamId(id);
     setRedirect(true);
     // getCurrentTeamByTeamId(id);
   };

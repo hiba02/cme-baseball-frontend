@@ -163,9 +163,11 @@ function App() {
       playersInfo.filter((p) => p.uniform_number !== uniform_number)
     );
   };
+  // TOFIX
   const getPlayersByteamId = (teamId) => {
     setPlayersInfo(playersInfo.filter((p) => p.team_id === teamId));
   };
+  // TOFIX
   const getCurrentTeamByTeamId = (teamId) => {
     console.log("getCurrentTeamByTeamId", teamId);
     setTeamNames(teamNames.filter((t) => t.id === teamId));
