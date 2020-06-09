@@ -34,7 +34,7 @@ const Roster = ({
 
   return (
     <div className="roster_body">
-      {/* <span
+      <span
         className="roster-icon-plus"
         onClick={() => {
           toggleCheckFromHitterId(id);
@@ -42,7 +42,7 @@ const Roster = ({
         }}
       >
         <FaPlusCircle />
-      </span> */}
+      </span>
       <span className="roster-id">{number}</span>
       <span className="roster-name">
         {name},&nbsp;#{uniform_number}

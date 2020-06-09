@@ -8,6 +8,7 @@ import CreateTeam from "./components/CreateTeam";
 import ShowTeam from "./components/ShowTeam";
 import CreatePlayer from "./components/CreatePlayer";
 import ShowPlayers from "./components/ShowPlayers";
+import Playball from "./components/Playball";
 
 function App() {
   const [word, setWord] = useState("");
@@ -232,6 +233,17 @@ function App() {
                 teamId={teamId}
                 currentTeam={currentTeam}
                 removePlayerByUniformNum={removePlayerByUniformNum}
+              />
+            </Route>
+            <Route path="/playball">
+              <Playball
+                user={userInfo}
+                players={playersInfo}
+                pitcher={pitcher}
+                hitter={hitter}
+                // getHitterFromPlayerInfo={getHitterFromPlayerInfo}
+                // toggleCheckFromHitterId={toggleCheckFromHitterId}
+                // removePlayerById={removePlayerById}
               />
             </Route>
           </Switch>
