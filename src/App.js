@@ -145,7 +145,7 @@ function App() {
       check
     );
     const player = {
-      id: nextId.current,
+      team_id: team_id,
       name: name,
       uniform_number: uniform_number,
       position: position,
@@ -165,12 +165,12 @@ function App() {
   };
   // TOFIX
   const getPlayersByteamId = (teamId) => {
-    setPlayersInfo(playersInfo.filter((p) => p.team_id === teamId));
+    // setPlayersInfo(playersInfo.filter((p) => p.team_id === teamId));
   };
   // TOFIX
   const getCurrentTeamByTeamId = (teamId) => {
     console.log("getCurrentTeamByTeamId", teamId);
-    setTeamNames(teamNames.filter((t) => t.id === teamId));
+    // setTeamNames(teamNames.filter((t) => t.id === teamId));
   };
 
   return (
@@ -229,8 +229,8 @@ function App() {
               <ShowPlayers
                 // user={userInfo}
                 players={playersInfo}
-                // teamId={teamId}
-                // currentTeam={currentTeam}
+                teamId={teamId}
+                currentTeam={currentTeam}
                 removePlayerByUniformNum={removePlayerByUniformNum}
               />
             </Route>

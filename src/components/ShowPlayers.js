@@ -11,9 +11,12 @@ const ShowPlayers = ({
   removePlayerById,
   removePlayerByUniformNum,
 }) => {
-  console.log("showPlayers component players: ", players);
-  console.log("showPlayers component teamId: ", teamId);
-  console.log("showPlayers component currentTeam: ", currentTeam);
+  // console.log("showPlayers component players: ", players);
+  // console.log("showPlayers component players.team_id: ", players);
+  // console.log("showPlayers component teamId: ", teamId);
+  // console.log("showPlayers component currentTeam: ", currentTeam);
+  const newPlayers = players.filter((t) => teamId === t.team_id);
+  console.log("showPlayers component newPlayers: ", newPlayers);
   let rostNumber = 0;
   let positionNumber = 0;
   return (
@@ -22,7 +25,7 @@ const ShowPlayers = ({
         <div className="showPlayers_title">ROSTER</div>
         <div className="showPlayers_content">
           {players &&
-            players.map((player) => (
+            newPlayers.map((player) => (
               <Roster
                 user={user}
                 player={player}

@@ -35,6 +35,8 @@ const CreatePlayer = ({
     check: false,
   });
 
+  const newPlayers = players.filter((t) => teamId === t.team_id);
+
   const {
     team_id,
     name,
@@ -234,8 +236,8 @@ const CreatePlayer = ({
           <div className="roster_template">
             <div className="roster_title">ROSTER</div>
             <div className="roster_content">
-              {players &&
-                players.map((player) => (
+              {newPlayers &&
+                newPlayers.map((player) => (
                   <Roster
                     user={userInfo}
                     player={player}
