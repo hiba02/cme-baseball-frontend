@@ -184,18 +184,20 @@ function App() {
   };
 
   //Toggle check hitter from current hitter
-  const toggleCheckFromHitterId = (id) => {
+  const toggleCheckFromHitterId = (uniform) => {
     if (hitter) {
       setPlayersInfo(
-        playersInfo.map((p) => (p.id === id ? { ...p, check: !p.check } : p))
+        playersInfo.map((p) =>
+          p.id === uniform ? { ...p, check: !p.check } : p
+        )
       );
       console.log("App.js toggleCheckFromHitterId hitter:", hitter);
     }
   };
 
   //Remove player
-  const removePlayerById = (id) => {
-    setPlayersInfo(playersInfo.filter((p) => p.id !== id));
+  const removePlayerById = (uniform) => {
+    setPlayersInfo(playersInfo.filter((p) => p.uniform_numer !== uniform));
   };
 
   // TOFIX
@@ -278,6 +280,7 @@ function App() {
                 getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                 toggleCheckFromHitterId={toggleCheckFromHitterId}
                 removePlayerById={removePlayerById}
+                getPitcherFromPlayerInfo={getPitcherFromPlayerInfo}
               />
             </Route>
           </Switch>

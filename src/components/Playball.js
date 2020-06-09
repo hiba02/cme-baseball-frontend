@@ -17,6 +17,7 @@ const Playball = ({
   pitcher,
   hitter,
   getHitterFromPlayerInfo,
+  getPitcherFromPlayerInfo,
   toggleCheckFromHitterId,
   removePlayerById,
 }) => {
@@ -420,6 +421,8 @@ const Playball = ({
       addOneScore();
     }
   };
+
+  getPitcherFromPlayerInfo(players);
 
   return (
     <div className="playball_body">
