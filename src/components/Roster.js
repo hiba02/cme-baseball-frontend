@@ -37,8 +37,8 @@ const Roster = ({
       <span
         className="roster-icon-plus"
         onClick={() => {
-          toggleCheckFromHitterId(id);
-          getHitterFromPlayerInfo(id);
+          toggleCheckFromHitterId(uniform_number);
+          getHitterFromPlayerInfo(uniform_number);
         }}
       >
         <FaPlusCircle />

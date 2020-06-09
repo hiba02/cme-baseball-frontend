@@ -164,6 +164,40 @@ function App() {
       playersInfo.filter((p) => p.uniform_number !== uniform_number)
     );
   };
+
+  //Filter pitcher from players info
+  const getPitcherFromPlayerInfo = (playersInfo) => {
+    if (playersInfo) {
+      setPitcher(playersInfo.filter((p) => p.position === "P")[0]);
+      console.log("getPitcherFromPlayerInfo", pitcher);
+    }
+  };
+
+  //Filter hitter from players info
+  const getHitterFromPlayerInfo = (uniform) => {
+    console.log("getHitterFromPlayerInfo", uniform);
+    if (playersInfo) {
+      setHitter(playersInfo.filter((p) => p.uniform_number === uniform)[0]);
+      console.log("App.js getHitterFromPlayerInfo pitcher:", hitter);
+      // toggleCheckFromHitterId(id);
+    }
+  };
+
+  //Toggle check hitter from current hitter
+  const toggleCheckFromHitterId = (id) => {
+    if (hitter) {
+      setPlayersInfo(
+        playersInfo.map((p) => (p.id === id ? { ...p, check: !p.check } : p))
+      );
+      console.log("App.js toggleCheckFromHitterId hitter:", hitter);
+    }
+  };
+
+  //Remove player
+  const removePlayerById = (id) => {
+    setPlayersInfo(playersInfo.filter((p) => p.id !== id));
+  };
+
   // TOFIX
   const getPlayersByteamId = (teamId) => {
     // setPlayersInfo(playersInfo.filter((p) => p.team_id === teamId));
@@ -241,9 +275,9 @@ function App() {
                 players={playersInfo}
                 pitcher={pitcher}
                 hitter={hitter}
-                // getHitterFromPlayerInfo={getHitterFromPlayerInfo}
-                // toggleCheckFromHitterId={toggleCheckFromHitterId}
-                // removePlayerById={removePlayerById}
+                getHitterFromPlayerInfo={getHitterFromPlayerInfo}
+                toggleCheckFromHitterId={toggleCheckFromHitterId}
+                removePlayerById={removePlayerById}
               />
             </Route>
           </Switch>

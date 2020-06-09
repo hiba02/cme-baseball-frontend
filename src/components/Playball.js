@@ -18,7 +18,7 @@ const Playball = ({
   hitter,
   getHitterFromPlayerInfo,
   toggleCheckFromHitterId,
-  removePlayerById
+  removePlayerById,
 }) => {
   const [inning, setInning] = useState(1);
   const [topBottom, setTopBottom] = useState(true);
@@ -107,7 +107,7 @@ const Playball = ({
     setScore(score + 1);
   };
 
-  const addNumberScore = num => {
+  const addNumberScore = (num) => {
     setScore(score + num);
   };
 
@@ -161,7 +161,7 @@ const Playball = ({
     set_3b(false);
   };
 
-  const baseRunnerCase = expr => {
+  const baseRunnerCase = (expr) => {
     switch (expr) {
       case "_1B":
         set_1b(true);
@@ -466,11 +466,11 @@ const Playball = ({
             <div className="roster_title">ROSTER</div>
             <div className="roster_content">
               {players &&
-                players.map(player => (
+                players.map((player) => (
                   <Roster
                     user={user}
                     player={player}
-                    key={player.id}
+                    key={player.uniform_number}
                     number={(rostNumber = rostNumber + 1)}
                     getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                     toggleCheckFromHitterId={toggleCheckFromHitterId}
@@ -483,12 +483,12 @@ const Playball = ({
         <section className="playball_section">
           <div className="palyball_wrap">
             {players &&
-              players.map(player => (
+              players.map((player) => (
                 <div className={"_" + player.position}>
                   <FieldPosition
                     user={user}
                     player={player}
-                    key={player.id}
+                    key={player.uniform_number}
                     number={(positionNumber = positionNumber + 1)}
                   />
                 </div>
